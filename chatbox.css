@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap');
+
+html {
+  --font-size: {font_size};
+  --text-color: {text_color};
+  --message-hide-delay: {message_hide_delay};
+  --username-color-saturation: {username_color_saturation}%;
+  --username-color-lightness: {username_color_lightness}%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "M PLUS 1", "M PLUS 1p", "M PLUS Rounded 1c";
+    font-size: var(--font-size);
+    color: var(--text-color);
+    text-shadow: 
+      #000 1px 1px 1px,
+      #000 1px 1px 1px,
+      #000 1px 1px 1px,
+      #000 1px 1px 1px,
+      #000 1px 1px 1px,
+      #000 1px 1px 1px,
+      #000 0px 0px 1px,
+      #000 0px 0px 1px,
+      #000 0px 0px 1px,
+      #000 0px 0px 1px,
+      #000 0px 0px 1px,
+      #000 0px 0px 1px;
+}
+
+@keyframes fadeiInBottom {
+  from {transform: translateY(100%);}
+  to {transform: translateY(0);}
+}
+
+#log>div {
+    animation: fadeiInBottom .1s ease forwards, fadeOut 0.5s ease var(--message-hide-delay) forwards;
+    -webkit-animation: fadeiInBottom .1s ease forwards, fadeOut 0.5s ease var(--message-hide-delay) forwards;
+}
+
+#log {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 10px 10px;
+    width: 100%;
+}
+
+#log>div {
+    display: flex;
+    flex-direction: column;
+}
+
+#log>div.deleted {
+    visibility: hidden;
+}
+
+#log .emote {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0.4em 0.2em;
+    position: relative;
+}
+
+#log .emote img {
+  	display: inline-block;
+    height: 1em;
+    opacity: 0;
+}
+
+#log .meta {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+#log .message {
+    word-wrap: break-word;
+}
+
+.badge {
+  	display: inline-block;
+    margin-right: 0.2em;
+    position: relative;
+    height: 1em;
+    vertical-align: middle;
+}
+
+.name {
+    white-space: break-spaces;
+    word-wrap: break-word;
+}
+
+.name::after {
+    content: attr(data-name);
+}
