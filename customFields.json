@@ -1,20 +1,29 @@
 {
     "username_color_saturation": {
-        "label": "Username color saturation (%)",
-        "type": "slider",
-        "name": "username_color_saturation",
-        "value": 70,
-        "min": 0,
-        "max": 100,
-        "steps": 1
+      "label": "Username color saturation (%)",
+      "type": "slider",
+      "name": "username_color_saturation",
+      "value": 70,
+      "min": 0,
+      "max": 100,
+      "steps": 1
     },
     "username_color_lightness": {
-        "label": "Username color lightness (%)",
-        "type": "slider",
-        "name": "username_color_lightness",
-        "value": 80,
-        "min": 0,
-        "max": 100,
-        "steps": 1
+      "label": "Username color lightness (%)",
+      "type": "slider",
+      "name": "username_color_lightness",
+      "value": 80,
+      "min": 0,
+      "max": 100,
+      "steps": 1
+    },
+    "nameMessageDirection": {
+      "label": "Username-Message Direction",
+      "type": "dropdown",
+      "options": {
+        "column": "Column",
+        "row": "Row"
+      },
+      "value": "row"
     }
-}
+  }

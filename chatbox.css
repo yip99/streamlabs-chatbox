@@ -56,9 +56,14 @@ body {
     width: 100%;
 }
 
-#log>div {
-    display: flex;
+#log>div.column {
+  	display: flex;
     flex-direction: column;
+  	align-items: flex-start;
+}
+
+#log>div.row {
+    flex-direction: row;
 }
 
 #log>div.deleted {
@@ -79,10 +84,13 @@ body {
     opacity: 0;
 }
 
-#log .meta {
+#log>div>.meta {
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
+}
+
+#log>div.column>.meta {
     display: flex;
     align-items: center;
 }
@@ -104,6 +112,10 @@ body {
     word-wrap: break-word;
 }
 
-.name::after {
+div.column > .meta > .name::after {
     content: attr(data-name);
+}
+
+div.row > .meta > .name::after {
+    content: attr(data-name) ':';
 }
