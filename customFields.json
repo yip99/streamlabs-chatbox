@@ -21,8 +21,8 @@
       "label": "Username-Message Direction",
       "type": "dropdown",
       "options": {
-        "column": "Column",
-        "row": "Row"
+        "column": "Vertical",
+        "row": "Horizontal"
       },
       "value": "row"
     }
