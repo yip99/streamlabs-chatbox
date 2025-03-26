@@ -3,18 +3,20 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap');
 
 html {
-  --font-size: {font_size};
-  --text-color: {text_color};
-  --message-hide-delay: {message_hide_delay};
-  --username-color-saturation: {username_color_saturation}%;
-  --username-color-lightness: {username_color_lightness}%;
+    --font-size: {font_size};
+    --text-color: {text_color};
+    --message-hide-delay: {message_hide_delay};
+    --username-color-saturation: {username_color_saturation}%;
+    --username-color-lightness: {username_color_lightness}%;
+    --text-shadow-color: rgb(0, 0, 0);
 }
 
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     overflow: hidden;
 }
@@ -23,24 +25,16 @@ body {
     font-family: "M PLUS 1", "M PLUS 1p", "M PLUS Rounded 1c";
     font-size: var(--font-size);
     color: var(--text-color);
-    text-shadow: 
-      #000 1px 1px 1px,
-      #000 1px 1px 1px,
-      #000 1px 1px 1px,
-      #000 1px 1px 1px,
-      #000 1px 1px 1px,
-      #000 1px 1px 1px,
-      #000 0px 0px 1px,
-      #000 0px 0px 1px,
-      #000 0px 0px 1px,
-      #000 0px 0px 1px,
-      #000 0px 0px 1px,
-      #000 0px 0px 1px;
 }
 
 @keyframes fadeiInBottom {
-  from {transform: translateY(100%);}
-  to {transform: translateY(0);}
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }
 
 #log>div {
@@ -57,9 +51,9 @@ body {
 }
 
 #log>div.column {
-  	display: flex;
+    display: flex;
     flex-direction: column;
-  	align-items: flex-start;
+    align-items: flex-start;
 }
 
 #log>div.row {
@@ -79,7 +73,7 @@ body {
 }
 
 #log .emote img {
-  	display: inline-block;
+    display: inline-block;
     height: 1em;
     opacity: 0;
 }
@@ -97,10 +91,23 @@ body {
 
 #log .message {
     word-wrap: break-word;
+    text-shadow:
+        var(--text-shadow-color) 1px 1px 1px,
+        var(--text-shadow-color) 1px 1px 1px,
+        var(--text-shadow-color) 1px 1px 1px,
+        var(--text-shadow-color) 1px 1px 1px,
+        var(--text-shadow-color) 1px 1px 1px,
+        var(--text-shadow-color) 1px 1px 1px,
+        var(--text-shadow-color) 0px 0px 1px,
+        var(--text-shadow-color) 0px 0px 1px,
+        var(--text-shadow-color) 0px 0px 1px,
+        var(--text-shadow-color) 0px 0px 1px,
+        var(--text-shadow-color) 0px 0px 1px,
+        var(--text-shadow-color) 0px 0px 1px;
 }
 
 .badge {
-  	display: inline-block;
+    display: inline-block;
     margin-right: 0.2em;
     position: relative;
     height: 1em;
@@ -110,12 +117,17 @@ body {
 .name {
     white-space: break-spaces;
     word-wrap: break-word;
+    text-shadow:
+        var(--text-shadow-color) 1px 1px 1px,
+        var(--text-shadow-color) 1px 1px 1px,
+        var(--text-shadow-color) 0px 0px 1px,
+        var(--text-shadow-color) 0px 0px 1px;
 }
 
-div.column > .meta > .name::after {
+div.column>.meta>.name::after {
     content: attr(data-name);
 }
 
-div.row > .meta > .name::after {
+div.row>.meta>.name::after {
     content: attr(data-name) ':';
 }
